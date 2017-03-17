@@ -1,0 +1,24 @@
+{
+  "name": "financialconsulting",
+  "version": "1.0.0",
+  "description": "Quick little project displaying current \"stock\" prices of clothing, music, and people that are trendy/trending.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicWilliams/DialUpFinancialConsulting.git"
+  },
+  "author": "Magic Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MagicWilliams/DialUpFinancialConsulting/issues"
+  },
+  "homepage": "https://github.com/MagicWilliams/DialUpFinancialConsulting#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "jade": "^1.11.0",
+    "path": "^0.12.7"
+  }
+}
