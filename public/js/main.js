@@ -1,6 +1,6 @@
 $(function () {
     $('.ticker').marquee({
-        duration: 3500,
+        duration: 5000,
         duplicate: true,
         delayBeforeStart: 0,
         pauseOnHover: true
