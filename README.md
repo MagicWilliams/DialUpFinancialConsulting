@@ -1,7 +1,8 @@
 # DIAL UP Financial Consulting
-TODO: Quick little project displaying current "stock" prices of clothing, music, and people that are trendy/trending. For reference, peep the following:
+Quick little project displaying current "stock" prices of clothing, music, and people that are trendy/trending. For reference, peep the following:
 
 Summer '16 Financial Consulting: http://dialupstuff.com/magazines/summer2016#46
+
 Fall '15 Financial Consulting: http://dialupstuff.com/magazines/fall2015#26
 
 ## Usage
