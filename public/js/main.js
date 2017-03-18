@@ -4,3 +4,9 @@ $(function () {
         duplicate: true
     });
 });
+
+$(".ticker").hover(function () { 
+    this.stop();
+}, function () {
+    this.start();
+});
