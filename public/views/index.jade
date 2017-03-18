@@ -13,12 +13,10 @@ html
   body#body
     #main.container
       .row
-        .col-md-10.col-md-offset-1
+        .col-md-12
           ul.ticker
-            li First Stock 143.21
-            li Second Stock 41.21
-            li Third Stock 73.21
-            li Fourth Stock 93.21
-            li Fifth Stock 3.21
+            for stock in data
+              li(style='color: #{stock.color}') #{stock.name} <br> #{stock.value}
+            
 
     

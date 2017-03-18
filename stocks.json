@@ -1,0 +1,37 @@
+{ 
+    "HANNN" : {
+        "name" : "HANNN",
+        "value": 74.55,
+        "color": "#81D117"
+    },
+
+    "BUCKET HATS": {
+      "name" : "BUCKET HATS",
+      "value": -41.98,
+      "color": "#81D117"
+    },
+
+    "DRAKE": {
+      "name" : "DRAKE",
+      "value": 54.17,
+      "color": "#81D117"
+    },
+    
+    "SNAPCHAT SPECTACLES": {
+      "name" : "SNAPCHAT SPECTACLES",
+      "value": -14.48,
+      "color": "#CE0B24"
+    },
+    
+    "WHITE TEES" : {
+      "name" : "WHITE TEES",
+      "value": 90.02,
+      "color": "#81D117"
+    },
+    
+    "SK8HI VANS" : {
+      "name" : "SK8HI VANS",
+      "value": 63.67,
+      "color": "#81D117"
+    }
+}

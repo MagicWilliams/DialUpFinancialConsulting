@@ -1,12 +1,8 @@
 $(function () {
     $('.ticker').marquee({
-        duration: 1500,
-        duplicate: true
+        duration: 3500,
+        duplicate: true,
+        delayBeforeStart: 0,
+        pauseOnHover: true
     });
-});
-
-$(".ticker").hover(function () { 
-    this.stop();
-}, function () {
-    this.start();
 });
