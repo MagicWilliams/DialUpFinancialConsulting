@@ -33,4 +33,35 @@ router.get('/', function(req, res) {
   })
 });
 
+router.get('/topstocks', function(req, res) {
+  
+  var MongoClient = mongodb.MongoClient; 
+  var url = process.env.MONGO_URL;
+  MongoClient.connect(url, function(err, db){
+    if (err) {
+      console.log('Cant connect to server. fix me!', err);
+    } else {
+      console.log("Connected to Mongo.");
+
+      var collection = db.collection('dufc');
+
+      collection.find({}).sort({value: -1}).toArray(function(err, result){
+        if (err){
+          res.send(err);
+        } else if (result.length){
+          res.render("topstocks.jade", {
+            "data" : result,
+            "count" : result.length
+          });
+        } else {
+          res.send("No results yet!");
+        }
+
+        db.close();
+      })
+    }
+  })
+});
+
+
 module.exports = router;
