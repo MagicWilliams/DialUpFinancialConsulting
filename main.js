@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
+app.set('port', (process.env.PORT || 2008));
 
 app.get('/', function (req, res) {
   res.render('index',
@@ -18,12 +19,6 @@ app.get('/', function (req, res) {
   )
 });
 
-
-
-app.listen(process.env.PORT || 2008, function () {
-	if (process.env.PORT){
-		console.log('Example app listening on port ' + process.env.PORT + '!');
-	} else {
-		console.log('Example app listening on port 2008!');
-	}
+app.listen(app.get("port"), function () {
+		console.log('Listening on port ' + app.get("port") + '.');
 });
