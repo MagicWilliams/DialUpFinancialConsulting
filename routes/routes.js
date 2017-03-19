@@ -1,17 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mongodb = require('mongodb');
-var data = require('../stocks.json');
 
-router.get('/', function (req, res) {
-  res.render('index',
-    { title : 'Home',
-      data: data 
-    }
-  )
-});
 
-router.get('/pull', function(req, res) {
+router.get('/', function(req, res) {
   
   var MongoClient = mongodb.MongoClient; 
   var url = process.env.MONGO_URL;
@@ -21,27 +13,15 @@ router.get('/pull', function(req, res) {
     } else {
       console.log("Connected to Mongo.");
 
-      var collection = db.collection('madcastdb');
-      var first = null;
+      var collection = db.collection('dufc');
 
-      collection.find({"podcast":{$ne:null}}).toArray(function(err, result){
+      collection.find({}).toArray(function(err, result){
         if (err){
           res.send(err);
         } else if (result.length){
-          first = result;
-        } else {
-          res.send("No results yet!");
-        }
-      })
-
-      collection.find({"podcast3":{$ne:null}}).toArray(function(err, result){
-        if (err){
-          res.send(err);
-        } else if (result.length){
-          res.render("allfeedback.jade", {
-            "feedback" : first,
-            "morefeedback" : result,
-            "count": first.length + result.length
+          res.render("index.jade", {
+            "data" : result,
+            "count" : result.length
           });
         } else {
           res.send("No results yet!");

@@ -16,3 +16,5 @@ app.set('port', (process.env.PORT || 2008));
 app.listen(app.get("port"), function () {
 		console.log('Listening on port ' + app.get("port") + '.');
 });
+
+// You might have to run 'export MONGO_URL=mongodb://localhost:27017/dufc' in your terminal my G
