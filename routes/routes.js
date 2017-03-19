@@ -1,4 +1,17 @@
-router.get('/', function(req, res) {
+var express = require('express');
+var router = express.Router();
+var mongodb = require('mongodb');
+var data = require('../stocks.json');
+
+router.get('/', function (req, res) {
+  res.render('index',
+    { title : 'Home',
+      data: data 
+    }
+  )
+});
+
+router.get('/pull', function(req, res) {
   
   var MongoClient = mongodb.MongoClient; 
   var url = process.env.MONGO_URL;
@@ -39,3 +52,5 @@ router.get('/', function(req, res) {
     }
   })
 });
+
+module.exports = router;
