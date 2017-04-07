@@ -60,13 +60,16 @@ router.get('/topstocks', function(req, res) {
         } else {
           res.send("No results yet!");
         }
-
         db.close();
       })
     }
   })
 });
 
+/* if (document.getElementById('r1').checked) {
+  rate_value = document.getElementById('r1').value;
+}
+*/
 
 router.post('/add', function(req, res){
   var MongoClient = mongodb.MongoClient;
@@ -77,7 +80,10 @@ router.post('/add', function(req, res){
     } else {
       console.log("all good! HANNN");
 
-      var stock = {name: req.body.name, value: req.body.value, color: req.body.color, abbreviation: req.body.abbreviation};
+      var name = req.body.name;
+      name = name.toUpperCase();
+
+      var stock = {name: name, value: req.body.value, color: req.body.color, abbreviation: req.body.abbreviation};
 
       var collection = db.collection('dufc');
       collection.insert([stock], function(err, result){

@@ -19,11 +19,15 @@ html
           form#form(method="post", name="addstock")
             input(class = "field", type='text', placeholder='Stock Name', name='name') 
             <br>
-            input(class = "field", type='text', placeholder='Value', name='value') 
-            <br> 
-            input(class = "field", data-parsley-pattern="/#81D117|#CE0B24/", type='text', placeholder='Color', name='color') 
-            <br>
             input(class = "field", type='text', placeholder='Abbreviation', name='abbreviation') 
+            <br>
+            input(class = "field", type='text', placeholder='Value', name='value') 
+            <br>
+            #radios
+              label Positive
+                input(class = "field", name = "option", type='radio', value = 'Positive')
+              label Negative
+                input(class = "field", name = "option", type='radio', value = 'Negative')
             <br>
             button#submitBtn(type = "submit", value = "validate") Submit IPO
           script(type='text/javascript').

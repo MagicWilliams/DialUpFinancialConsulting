@@ -23,6 +23,18 @@
 	width: 100vw;
 }
 
+#radios {
+	margin-left: 5vw;
+	text-align: center;
+	font-size: 3em;
+	color: white`;
+}
+
+#radios input {
+	display: inline;
+	width: 10vw;
+}
+
 .ticker {
 	background-color: #4A4A4A;
     width: 104vw;
