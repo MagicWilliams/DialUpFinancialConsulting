@@ -1,0 +1,54 @@
+@font-face{
+	font-family: "Dotty";
+	src: url("/fonts/dotty.ttf");
+}
+
+@font-face{
+	font-family: 'ArialRoundedMTBold';
+	src: url('../fonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/ArialRoundedMTBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/ArialRoundedMTBold.woff2') format('woff2'),
+	url('../fonts/ArialRoundedMTBold.woff') format('woff'),
+	url('../fonts/ArialRoundedMTBold.ttf')  format('truetype'),
+	url('../fonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+* {
+	font-family: "Dotty";
+}
+
+#body {
+	background-color: #30C1F9;
+	overflow: hidden;
+}
+
+#main {
+	width: 100vw;
+}
+
+.ticker {
+	background-color: #4A4A4A;
+    width: 104vw;
+    margin-left: -2vw;
+    height: 13.5vh;
+    margin-top: 40vh;
+    overflow: hidden;
+    color: white;
+}
+
+ul. li {
+	line-height: 6vh;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 70px;
+}
+
+#footer {
+	color: white;
+	font-family: "ArialRoundedMTBold";
+	text-align: center;
+	position: absolute;
+	width: 8vw;
+	top: 90vh;
+	left: 46vw;
+}
