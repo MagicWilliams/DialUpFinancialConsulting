@@ -30,13 +30,11 @@ router.get('/', function(req, res) {
         } else {
           res.send("No results yet!");
         }
-
         db.close();
       })
     }
   })
 });
-
 
 
 router.get('/topstocks', function(req, res) {
@@ -70,7 +68,7 @@ router.get('/topstocks', function(req, res) {
 });
 
 
-router.post('/addstock', function(req, res){
+router.post('/add', function(req, res){
   var MongoClient = mongodb.MongoClient;
   var url = process.env.MONGO_URL;
   MongoClient.connect(url, function(err, db){
@@ -80,14 +78,21 @@ router.post('/addstock', function(req, res){
       console.log("all good! HANNN");
 
       var stock = {name: req.body.name, value: req.body.value, color: req.body.color, abbreviation: req.body.abbreviation};
-      var collection = db.collection("madcastdb");
 
+      var collection = db.collection('dufc');
       collection.insert([stock], function(err, result){
         if(err) {
           console.log(err);
         } else {
           console.log("First entry logged.");
+          collection.find({}).toArray(function(err, result){
+            res.render("index.jade", {
+                "data" : result,
+                "count" : result.length
+              });
+          })
         }
+        db.close();
       });
   }})
 });
