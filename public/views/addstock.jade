@@ -1,0 +1,51 @@
+doctype
+html
+  head
+    title DIAL UP FINANCIAL CONSULTING
+    link(rel='stylesheet', href='/views/stylesheets/style.css')
+    link(rel='stylesheet', href='/views/stylesheets/addstock.css')
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript")
+    script(src="/js/main.js")
+    script(src="/js/submit.js")
+    script(src="/js/parsley.min.js")
+
+    link(rel='stylesheet', href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+
+  body#body
+    #main.container
+      .row
+        .col-md-12
+          form#form()
+            input(class = "field", type='text', placeholder='Stock Name', name='name') 
+            <br>
+            input(class = "field", type='text', placeholder='Value', name='value') 
+            <br> 
+            input(class = "field", data-parsley-pattern="/#81D117|#CE0B24/", type='text', placeholder='Color', name='color') 
+            <br>
+            input(class = "field", type='text', placeholder='Abbreviation', name='abbreviation') 
+            <br>
+            button#submitBtn(type = "submit", value = "validate") Submit IPO
+          script(type='text/javascript').
+            $(function () {
+            $('#form').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-warning').toggleClass('hidden', ok);
+            })
+            .on('form:submit', function() {
+            return false; // Don't submit form for this demo
+            })
+            .on("form:success", function() {
+            subForm();
+            showModal();
+            });
+            });
+
+      #footer
+        h3 DIAL UP
+
+
+    
+

@@ -8,6 +8,8 @@ var routes = require(path.join(__dirname + '/routes/routes.js'));
 
 app.use('/', routes);
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');

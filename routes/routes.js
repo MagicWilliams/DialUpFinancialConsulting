@@ -3,6 +3,10 @@ var router = express.Router();
 var mongodb = require('mongodb');
 
 
+router.get('/add', function(req, res) {
+  res.render('addstock.jade');
+});
+
 router.get('/', function(req, res) {
   
   var MongoClient = mongodb.MongoClient; 
@@ -33,6 +37,8 @@ router.get('/', function(req, res) {
   })
 });
 
+
+
 router.get('/topstocks', function(req, res) {
   
   var MongoClient = mongodb.MongoClient; 
@@ -61,6 +67,29 @@ router.get('/topstocks', function(req, res) {
       })
     }
   })
+});
+
+
+router.post('/addstock', function(req, res){
+  var MongoClient = mongodb.MongoClient;
+  var url = process.env.MONGO_URL;
+  MongoClient.connect(url, function(err, db){
+    if (err){
+      console.log("something's wrong bro");
+    } else {
+      console.log("all good! HANNN");
+
+      var stock = {name: req.body.name, value: req.body.value, color: req.body.color, abbreviation: req.body.abbreviation};
+      var collection = db.collection("madcastdb");
+
+      collection.insert([stock], function(err, result){
+        if(err) {
+          console.log(err);
+        } else {
+          console.log("First entry logged.");
+        }
+      });
+  }})
 });
 
 
