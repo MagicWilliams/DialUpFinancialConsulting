@@ -17,6 +17,9 @@ html
           ul.ticker
             for stock in data
               li(style='color: #{stock.color}') #{stock.name} <br> #{stock.value}
+      a(href = "/add")
+        button#submitBtn ADD NEW STOCK HERE
+
     #footer
       h3 DIAL UP
 

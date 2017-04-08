@@ -31,6 +31,7 @@
     margin-top: 40vh;
     overflow: hidden;
     color: white;
+    margin-bottom: 5vh;
 }
 
 ul.ticker li {
@@ -48,4 +49,12 @@ ul.ticker li {
 	width: 8vw;
 	top: 90vh;
 	left: 45vw;
+}
+
+
+#submitBtn {
+	height: 6vh;
+	width: 25vw;
+	margin-left: 35.5vw;
+	font-size: 1.8em;
 }
