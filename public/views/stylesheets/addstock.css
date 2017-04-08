@@ -17,3 +17,12 @@
 	margin-left: 35.5vw;
 	font-size: 1.8em;
 }
+
+ul {
+	font-size: 2em;
+	text-align: center;
+	margin-bottom: 50px;
+	margin-left: -5vw;
+	color: white;
+	list-style: none;
+}

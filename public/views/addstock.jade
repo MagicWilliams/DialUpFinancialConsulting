@@ -7,7 +7,6 @@ html
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     script(src="//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript")
     script(src="/js/main.js")
-    script(src="/js/add.js")
     script(src="/js/parsley.min.js")
 
     link(rel='stylesheet', href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
@@ -18,11 +17,11 @@ html
       .row
         .col-md-12
           form#form(method="post", name="addstock")
-            input(class = "field", type='text', placeholder='Stock Name', name='name') 
+            input(class = "field", data-parsley-required="true", type='text', placeholder='Stock Name', name='name') 
             <br>
-            input(class = "field", type='text', placeholder='Abbreviation', name='abbreviation') 
+            input(class = "field", data-parsley-required="true", type='text', placeholder='Abbreviation', name='abbreviation', data-parsley-maxlength="4") 
             <br>
-            input(class = "field", type='text', placeholder='Value', name='value') 
+            input(class = "field", data-parsley-required="true", type='text', placeholder='Value', name='value', data-parsley-type="number") 
             <br>
             button#submitBtn(type = "submit", value = "validate") Submit IPO
             <br>
