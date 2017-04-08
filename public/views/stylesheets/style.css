@@ -16,6 +16,7 @@
 
 #body {
 	background-color: #30C1F9;
+	overflow: hidden;
 }
 
 #main {
