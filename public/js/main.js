@@ -7,7 +7,3 @@ $(function () {
     });
 });
 
-
-
-
-// : Use #81D117 for Positive Stocks, or #CE0B24 for negative jawns

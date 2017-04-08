@@ -83,7 +83,15 @@ router.post('/add', function(req, res){
       var name = req.body.name;
       name = name.toUpperCase();
 
-      var stock = {name: name, value: req.body.value, color: req.body.color, abbreviation: req.body.abbreviation};
+      var color = "#CE0B24";
+
+      if(req.body.value > 0) {
+        color = "#81D117";
+      } else if (req.body.value === 0) {
+        color = "#ffffff";
+      }
+
+      var stock = {name: name, value: req.body.value, color: color, abbreviation: req.body.abbreviation};
 
       var collection = db.collection('dufc');
       collection.insert([stock], function(err, result){
