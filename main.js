@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 app.set('port', (process.env.PORT || 2008));
+app.set('mongo_url', (process.env.MONGO_URL || "mongodb://localhost:27017/madcastdb"));
 
 var routes = require(path.join(__dirname + '/routes/routes.js'));
 app.use('/', routes);
