@@ -40,7 +40,7 @@ router.get('/', function(req, res) {
 router.get('/topstocks', function(req, res) {
   
   var MongoClient = mongodb.MongoClient; 
-  var url = process.env.MONGO_URL;
+  var url = "mongodb://localhost:27017/dufc";
   MongoClient.connect(url, function(err, db){
     if (err) {
       console.log('Cant connect to server. fix me!', err);
@@ -73,7 +73,7 @@ router.get('/topstocks', function(req, res) {
 
 router.post('/add', function(req, res){
   var MongoClient = mongodb.MongoClient;
-  var url = process.env.MONGO_URL;
+  var url = "mongodb://localhost:27017/dufc";
   MongoClient.connect(url, function(err, db){
     if (err){
       console.log("something's wrong bro");
