@@ -17,8 +17,8 @@ app.set('mongo_url', (process.env.MONGO_URL || "mongodb://localhost:27017/madcas
 var routes = require(path.join(__dirname + '/routes/routes.js'));
 app.use('/', routes);
 
-app.listen(app.get("port"), function () {
+app.listen(80), function () {
 		console.log('Listening on port ' + app.get("port") + '.');
-});
+};
 
 // You might have to run 'export MONGO_URL=mongodb://localhost:27017/dufc' in your terminal my G
