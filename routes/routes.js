@@ -10,7 +10,7 @@ router.get('/add', function(req, res) {
 router.get('/', function(req, res) {
   
   var MongoClient = mongodb.MongoClient; 
-  var url = process.env.MONGO_URL;
+  var url = "mongodb://localhost:27017/dufc";
   MongoClient.connect(url, function(err, db){
     if (err) {
       console.log('Cant connect to server. fix me!', err);
