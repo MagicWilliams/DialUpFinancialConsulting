@@ -17,11 +17,11 @@ html
       .row
         .col-md-12
           form#form(method="post", name="addstock")
-            input(class = "field", data-parsley-required="true", type='text', placeholder='Stock Name', name='name') 
+            input(class = "field", data-parsley-required="true", type='text', placeholder='Stock Name', name='name', data-parsley-maxlength="32") 
             <br>
             input(class = "field", data-parsley-required="true", type='text', placeholder='Abbreviation', name='abbreviation', data-parsley-maxlength="4") 
             <br>
-            input(class = "field", data-parsley-required="true", type='text', placeholder='Value', name='value', data-parsley-type="number") 
+            input(class = "field", data-parsley-required="true", type='text', placeholder='Value', name='value', data-parsley-type="number", data-parsley-min="-1000", data-parsley-min="1000") 
             <br>
             button#submitBtn(type = "submit", value = "validate") Submit IPO
             <br>
