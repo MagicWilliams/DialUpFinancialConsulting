@@ -17,7 +17,7 @@ app.set('mongo_url', (process.env.MONGO_URL || "mongodb://localhost:27017/madcas
 var routes = require(path.join(__dirname + '/routes/routes.js'));
 app.use('/', routes);
 
-app.listen(80), function () {
+app.listen(2006), function () {
 		console.log('Listening on port ' + app.get("port") + '.');
 };
 
